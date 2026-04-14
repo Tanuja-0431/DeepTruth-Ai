@@ -148,6 +148,13 @@ cd frontend && npm run build
 - `FRAME_SAMPLE_INTERVAL` – Sample every N frames (default 30)
 - `VITE_API_URL` – Backend URL for production frontend
 
+## Dataset
+
+The dataset used for training and testing is available on Google Drive:  
+[DeepTruth Dataset - Google Drive](https://drive.google.com/drive/folders/1fXZwrUZ5HevNxRkBEQMfd-fV_6HMab5h?usp=drive_link)
+
+---
+
 ## License
 
 MIT
