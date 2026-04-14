@@ -1,0 +1,16 @@
+pycache/
+*.pyc
+venv/
+.env
+node_modules/
+uploads/
+dataset/
+data/
+models/
+*.keras
+*.h5
+frontend/node_modules/
+dist/
+build/
+.vscode/
+.idea/

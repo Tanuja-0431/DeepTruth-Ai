@@ -1,0 +1,12 @@
+
+--- Testing: real image.jpg ---
+1. Raw Math [0, 255]      | Min:   0.00 | Max: 255.00 | Pred: 1.000000
+2. Rescaled [0, 1]        | Min:   0.00 | Max:   1.00 | Pred: 0.000006
+3. Xception Prep [-1, 1]  | Min:  -1.00 | Max:   1.00 | Pred: 0.000000
+4. EfficientNet Prep      | Min:   0.00 | Max: 255.00 | Pred: 1.000000
+
+--- Testing: fake image.jpg ---
+1. Raw Math [0, 255]      | Min:   0.00 | Max: 255.00 | Pred: 1.000000
+2. Rescaled [0, 1]        | Min:   0.00 | Max:   1.00 | Pred: 0.000001
+3. Xception Prep [-1, 1]  | Min:  -1.00 | Max:   1.00 | Pred: 0.000000
+4. EfficientNet Prep      | Min:   0.00 | Max: 255.00 | Pred: 1.000000

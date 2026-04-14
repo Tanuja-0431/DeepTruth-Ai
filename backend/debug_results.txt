@@ -1,0 +1,9 @@
+--- 1. VERIFY MODEL LOADING ---
+Preprocess mapping: keras.src.applications.efficientnet.preprocess_input
+Input shape: (None, 224, 224, 3)
+Output shape: (None, 1)
+Layers: input_layer_14 (InputLayer), xception (Functional), dense_6 (Dense), dropout_3 (Dropout), dense_7 (Dense)
+Scen A (Raw 0-255 + preprocess): Min=0.0000, Max=255.0000 -> Pred=1.0000
+Scen B (/ 255 + preprocess): Min=0.0000, Max=1.0000 -> Pred=0.8646
+Blank (0s) -> Pred: 0.6925
+White (255s) -> Pred: 1.0000
