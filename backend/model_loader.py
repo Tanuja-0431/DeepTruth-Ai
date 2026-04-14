@@ -7,7 +7,7 @@ try:
 except ImportError:
     TF_AVAILABLE = False
 
-from config import MODEL_PATH
+from config import MODEL_PATH, MODEL_DRIVE_ID
 
 _model = None
 _preprocess = None
@@ -28,13 +28,34 @@ def get_gpu_info():
     return info
 
 
+def download_model_from_drive():
+    """Download the model file from Google Drive if it doesn't exist."""
+    if os.path.exists(MODEL_PATH):
+        return
+
+    os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
+    print(f"Downloading model from Google Drive (ID: {MODEL_DRIVE_ID})...")
+    
+    try:
+        import gdown
+        url = f'https://drive.google.com/uc?id={MODEL_DRIVE_ID}'
+        gdown.download(url, MODEL_PATH, quiet=False)
+    except Exception as e:
+        print(f"Failed to download model: {e}")
+        # We don't raise here yet; load_model will catch the missing file
+
+
 def load_model():
     global _model, _preprocess
     if _model is not None:
         return _model, _preprocess
 
+    # Ensure model exists
     if not os.path.exists(MODEL_PATH):
-        raise FileNotFoundError(f"Model not found: {MODEL_PATH}")
+        download_model_from_drive()
+
+    if not os.path.exists(MODEL_PATH):
+        raise FileNotFoundError(f"Model File not found at {MODEL_PATH} after download attempt.")
 
     try:
         from tensorflow.keras.models import load_model as keras_load

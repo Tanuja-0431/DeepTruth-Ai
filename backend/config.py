@@ -4,6 +4,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 MODEL_PATH = os.path.join(PROJECT_ROOT, "models", "deepfake_final_model.keras")
+MODEL_DRIVE_ID = os.environ.get("MODEL_DRIVE_ID", "1js0NOSnoApGNjrursV2OEc1Y4Qg0GNwf")
 UPLOAD_DIR = os.path.join(PROJECT_ROOT, "uploads")
 METRICS_CACHE_DIR = os.path.join(PROJECT_ROOT, ".metrics_cache")
 
